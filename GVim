@@ -1,0 +1,5 @@
+要使用gvim需安装vim-X11
+
+解决菜单栏不显示中文和GTK warning问题:
+cd /usr/share/vim/vim74/lang/
+ln -s menu_zh_cn.utf-8.vim menu_zh_cn.utf8.vim
