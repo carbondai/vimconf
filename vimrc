@@ -13,6 +13,7 @@ set nobackup  "不要备份
 :inoremap [ []<ESC>i
 :inoremap ' ''<ESC>i
 :inoremap " ""<ESC>i    "成对出现方便编程
+:inoremap { {<CR>}<ESC>O 
 
 set tabstop=4
 set shiftwidth=4
