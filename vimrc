@@ -22,6 +22,7 @@ set expandtab   "python编程时设置缩进为4个空格
 
 
 "以下为打造Python编程环境的配置，不完全版，还需要研究
+"git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " required
 filetype off                  " required
 
