@@ -1,27 +1,3 @@
-"使用以下命令将示例配置拷贝到主目录
-" cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc
-"然后添加自己的常用设置
-
-"Added by daixin
-colorscheme desert  "设置主题
-set fileencodings=gbk,utf-8  "设置编码格式显示中文
-set guifont=Monospace\ 14   "设置字体，主要用于gVim
-set nu  "显示行数
-set nobackup  "不要备份
-
-"成对出现方便编程
-:inoremap ( ()<ESC>i
-:inoremap [ []<ESC>i
-:inoremap ' ''<ESC>i
-:inoremap " ""<ESC>i    
-:inoremap { {<CR>}<ESC>O 
-
-set tabstop=4
-set shiftwidth=4
-set expandtab   "python编程时设置缩进为4个空格
-
-
-"以下为打造Python编程环境的配置，不完全版，还需要研究
 set nocompatible              " required
 filetype off                  " required
 
@@ -42,13 +18,39 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
+
+"使用以下命令将示例配置拷贝到主目录
+" cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc
+"然后添加自己的常用设置
+
+"Added by daixin
+set background=dark
+colorscheme solarized "设置主题
+set fileencodings=gbk,utf-8  "设置编码格式显示中文
+set guifont=Monospace\ 12   "设置字体，主要用于gVim
+set nu  "显示行数
+set nobackup  "不要备份
+
+"成对出现方便编程
+:inoremap ( ()<ESC>i
+:inoremap [ []<ESC>i
+:inoremap ' ''<ESC>i
+"    :inoremap " ""<ESC>i    
+"    :inoremap { {<CR>}<ESC>O 
+
+"    set tabstop=4
+"    set shiftwidth=4
+"    set expandtab   "python编程时设置缩进为4个空格
 
 "Enable folding
 set foldmethod=indent
@@ -69,14 +71,16 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 "标示不必要的空白字符
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
 let python_highlight_all=1
 syntax on
 
-"    let g:ycm_autoclose_preview_window_after_completion=1
-"    map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let g:solarized_termtrans=1
